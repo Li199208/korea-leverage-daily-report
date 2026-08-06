@@ -184,17 +184,19 @@ footer{color:var(--ink-3);font-size:12px;text-align:center;padding:18px 0 4px;bo
 <section id="secCore">
   <div class="corebox">
     <div class="core-kicker">研究员观点</div>
-    <div class="core-lead">韩国市场呈现价格反向分化、估值同步下修、去杠杆边际放缓的非对称格局。</div>
-    <div class="core-lead">KOSPI 单日回吐 4.6% 并触发场内 매도 사이드카、KOSDAQ 逆势收红，两市方向背离，波动率重回样本高位，成交仍极为活跃。</div>
-    <div class="core-lead">估值层面 KOSPI PE、PB 分位随价格下修但仍处中高位，KOSDAQ 稳居中枢下方，结构分化延续。</div>
-    <div class="core-lead">资金端融资余额、预托金与杠杆 ETF 自峰值大幅缩水，融资余额 7 交易日以来首次回升但绝对水平仍显著高于年初，单股类杠杆 ETF 集中度偏高，出清尚未完成。强平金额较前日显著缓和，5 日均值仍居十年极值区间，被动抛压边际减弱；外资累计净卖压主导，最新单日再度大额净卖，前一日的短暂净买入未能延续，趋势逆转仍需验证。</div>
+    <div class="core-lead">韩国市场呈现价格深调、估值分化、去杠杆未竟的非对称格局。</div>
+    <ol>
+      <li>KOSPI 与 KOSDAQ 较前高深度回撤，波动率仍处历史高位，成交却维持极热，量价背离突出。</li>
+      <li>估值层面 KOSPI 消化不足、KOSDAQ 已回落至中枢下方，结构分化明显。</li>
+      <li>资金端融资余额、预托金与杠杆 ETF 自峰值大幅缩水，但融资绝对水平仍显著高于年初，单股类杠杆 ETF 集中度偏高，出清尚未完成。强平金额居十年极值区间，被动抛压未解；外资累计净卖压主导，最新单日虽转为小幅净买入，趋势逆转仍需验证。</li>
+    </ol>
   </div>
 </section>
 
 <section id="secA">
   <div class="kicker">SECTION A / VALUATION & SCALE</div>
   <h2 id="heading-a">估值与市场尺度</h2>
-  <div class="section-conclusion" id="conclusion-a"><strong>估值分位随价格下修，两市走势分化</strong><span>数据加载中。</span></div>
+  <div class="section-conclusion" id="conclusion-a"><strong>估值下修，两市走势分化</strong><span>数据加载中。</span></div>
   <div class="metric-strip" id="valuation-grid"></div>
   <div class="grid2">
     <div class="card">
@@ -237,7 +239,7 @@ footer{color:var(--ink-3);font-size:12px;text-align:center;padding:18px 0 4px;bo
 <section id="secC">
   <div class="kicker">SECTION C / LEVERAGE OUTSTANDING</div>
   <h2 id="heading-c">杠杆存量：融资、预托金与杠杆 ETF 的规模变化</h2>
-  <div class="section-conclusion" id="conclusion-c"><strong>融资余额 7 交易日以来首次反弹</strong><span>数据加载中。</span></div>
+  <div class="section-conclusion" id="conclusion-c"><strong>融资余额首次回升</strong><span>数据加载中。</span></div>
   <div class="metric-strip" id="leverage-strip"></div>
   <div class="grid2">
     <div class="card">
@@ -414,9 +416,9 @@ setText('title-d2',`图 D2 · 强平/未收金比最新 ${fmtNum(M.liqr.v,1)}%�
       : (M.ff.cum < 0
          ? `外资累计仍为净卖出，近 ${M.ff.last5_n} 个可用交易日合计${flowText(M.ff.last5)}，最新可用日 ${mdFmt(M.asof.ff)} 为${flowText(M.ff.latest)}。`
          : `外资累计已转为净买入，近 ${M.ff.last5_n} 个可用交易日合计${flowText(M.ff.last5)}，最新可用日 ${mdFmt(M.asof.ff)} 为${flowText(M.ff.latest)}。`);
- setHtml('conclusion-a', reviewConclusion('A', '估值分位随价格下修，两市走势分化', valuationTake));
+ setHtml('conclusion-a', reviewConclusion('A', '估值下修，两市走势分化', valuationTake));
  setHtml('conclusion-b', reviewConclusion('B', '回吐反弹涨幅，波动率再抬升', volTake));
- setHtml('conclusion-c', reviewConclusion('C', '融资余额 7 交易日以来首次反弹', deleveragingTake));
+ setHtml('conclusion-c', reviewConclusion('C', '融资余额首次回升', deleveragingTake));
  setHtml('conclusion-d', reviewConclusion('D', '强平大幅缓和，外资再度净卖出', `${liqTake}${flowTake}`));
 
 const C = {pri:'#2e63ad',acc:'#bd842f',up:'#c64a3c',dn:'#16805f',mut:'#6e7f90',
